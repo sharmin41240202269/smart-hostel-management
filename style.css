@@ -1,0 +1,346 @@
+/* ==========================================================================
+   ১. গ্লোবাল এবং বেসিক রিসেট (সবার জন্য প্রযোজ্য)
+   ========================================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #f4f6f9;
+}
+
+
+/* ==========================================================================
+   ২. হোমপেজ (Index.php) এবং লগইন পেজ (Login.php) এর ডিজাইন
+   ========================================================================== */
+
+/* মেইন পেজ লেআউট */
+.login-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* সেন্ট্রাল সাদা বক্স */
+.login-box {
+    background-color: white;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 450px;
+    text-align: center;
+}
+
+/* লোগো ও আইকন */
+.login-icon {
+    font-size: 50px;
+    margin-bottom: 15px;
+}
+
+.login-box h1 {
+    font-size: 28px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.login-box p {
+    color: #666;
+    margin-bottom: 30px;
+    font-size: 14px;
+}
+
+/* ফর্ম ও ইনপুট ফিল্ড */
+.login-box form {
+    text-align: left;
+}
+
+.login-box label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #444;
+    font-size: 14px;
+}
+
+.login-box input[type="email"],
+.login-box input[type="password"],
+.login-box select {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 15px;
+    outline: none;
+    transition: 0.3s;
+}
+
+.login-box input:focus {
+    border-color: #007bff;
+}
+
+/* বোতাম ও লিংকসমূহ */
+.submit-button {
+    width: 100%;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 12px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+    text-transform: uppercase;
+}
+
+.submit-button:hover {
+    background-color: #0056b3;
+}
+
+.back-button {
+    display: inline-block;
+    margin-top: 20px;
+    color: #007bff;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.back-button:hover {
+    text-decoration: underline;
+}
+
+/* পোর্টাল অপশনস (হোমপেজের জন্য বিশেষ লিংক ডিজাইন) */
+.login-box a.portal-link {
+    display: block;
+    background-color: #f8f9fa;
+    color: #007bff;
+    padding: 15px;
+    margin: 10px 0;
+    border: 1px solid #dee2e6;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.login-box a.portal-link:hover {
+    background-color: #007bff;
+    color: white;
+    border-color: #007bff;
+}
+
+
+/* ==========================================================================
+   ৩. অ্যাডমিন ড্যাশবোর্ড ও সাইডবার প্যানেলের ডিজাইন
+   ========================================================================== */
+
+/* টপ নেভিগেশন বার */
+.top-navbar {
+    background-color: #007bff;
+    color: white;
+    padding: 15px 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    height: 60px;
+}
+
+.top-navbar h2 {
+    font-size: 20px;
+}
+
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.logout-btn {
+    background-color: white;
+    color: #333;
+    padding: 6px 15px;
+    text-decoration: none;
+    border-radius: 4px;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+/* মেইন লেআউট */
+.main-container {
+    display: flex;
+    margin-top: 60px;
+}
+
+/* সাইডবার মেনু */
+.sidebar {
+    width: 240px;
+    background-color: #212529;
+    color: white;
+    height: calc(100vh - 60px);
+    position: fixed;
+    top: 60px;
+    left: 0;
+    padding-top: 15px;
+}
+
+.sidebar h3 {
+    text-align: center;
+    font-size: 18px;
+    margin-bottom: 15px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #343a40;
+}
+
+.sidebar ul {
+    list-style: none;
+}
+
+.sidebar ul li a {
+    display: block;
+    color: #c2c7d0;
+    padding: 12px 20px;
+    text-decoration: none;
+    font-size: 15px;
+    transition: 0.2s;
+}
+
+.sidebar ul li a:hover, .sidebar ul li a.active {
+    background-color: #007bff;
+    color: white;
+}
+
+/* কন্টেন্ট এরিয়া */
+.content {
+    margin-left: 240px;
+    padding: 25px;
+    width: calc(100% - 240px);
+}
+
+.content h1 {
+    font-size: 26px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* ড্যাশবোর্ড কার্ড গ্রিড */
+.dashboard-cards {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.card {
+    padding: 20px;
+    border-radius: 6px;
+    color: white;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.card h3 {
+    font-size: 15px;
+    font-weight: normal;
+    margin-bottom: 10px;
+}
+
+.card .card-number {
+    font-size: 28px;
+    font-weight: bold;
+}
+
+/* কালার কোডসমূহ */
+.bg-blue { background-color: #0d6efd; }
+.bg-green { background-color: #198754; }
+.bg-yellow { background-color: #ffc107; color: #333; }
+.bg-cyan { background-color: #0dcaf0; }
+.bg-grey { background-color: #6c757d; }
+.bg-dark { background-color: #212529; }
+.bg-red { background-color: #dc3545; }
+
+/* টেবিল ডিজাইন */
+.table-section {
+    background-color: white;
+    border-radius: 6px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    border: 1px solid #dee2e6;
+    margin-top: 25px;
+}
+
+.table-header {
+    background-color: #007bff;
+    color: white;
+    padding: 12px 20px;
+    font-weight: bold;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 12px 20px;
+    text-align: left;
+    border-bottom: 1px solid #dee2e6;
+    font-size: 14px;
+}
+
+th {
+    background-color: #212529;
+    color: white;
+}
+
+tr:hover {
+    background-color: #f8f9fa;
+}
+
+/* অ্যালার্ট ও মেসেজ স্টাইল */
+.status-active {
+    background-color: #d1e7dd;
+    color: #0f5132;
+    padding: 3px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.success-message {
+    background-color: #d1e7dd;
+    color: #0f5132;
+    padding: 12px;
+    border-radius: 4px;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.error-message {
+    background-color: #f8d7da;
+    color: #842029;
+    padding: 12px;
+    border-radius: 4px;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.welcome-box {
+    background-color: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    border: 1px solid #e2e8f0;
+}
